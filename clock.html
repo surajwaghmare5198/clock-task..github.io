@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>clock task</title>
+    <link rel="stylesheet" href="./clock.css">
+</head>
+
+<body>
+    <div class="main">
+        <div class="Hello" id="clock">
+
+
+            <span class="text" id="Hrs"></span>: 
+            <span class="text" id="Min"></span>::
+            <span class="text" id="Sec"></span>:
+            <span class="text" id="Day"></span> -
+            <span class="text" id="Date"></span>-
+            <span class="text" id="Month"></span>-
+            <span class="text" id="Year"></span>-
+            <span class="text" id="AM/PM"></span>
+
+        </div>
+    </div>
+
+    <script>
+        setInterval(() => {
+            var d = new Date()
+
+            var hrs = d.getHours();
+            var min = d.getMinutes();
+            var Sec = d.getSeconds();
+            var Day = d.getDay();
+            var date = d.getDate();
+            var month = d.getMonth();
+            var year = d.getFullYear();
+
+            var days = ["Sun", "Mon", "Tue", "Wed", "Thus", "Fri", "Sat"];
+            var months = ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sap", "Oct", "Nov", "Dec"];
+
+
+            document.getElementById("Hrs").innerHTML = hrs
+            document.getElementById("Min").innerHTML = min
+            document.getElementById("Sec").innerHTML = Sec
+            document.getElementById("Day").innerHTML = days[Day]
+            document.getElementById("Date").innerHTML = date
+            document.getElementById("Month").innerHTML = months[month]
+            document.getElementById("Year").innerHTML = year
+
+
+            if (hrs < 12) {
+                document.getElementById("AM/PM").innerHTML="AM"
+            }
+else{
+    document.getElementById("AM/PM").innerHTML="PM"
+}
+},1000)
+
+</script>
+
+
+</body>
+
+</html>
